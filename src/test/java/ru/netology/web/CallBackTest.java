@@ -18,10 +18,9 @@ class CallBackTest {
     private WebDriver driver;
 
     @BeforeAll
-    public static void setUp() { WebDriverManager.chromedriver(). setup(); }
-    static void setupAll() {
-        WebDriverManager.chromedriver().setup();
+    public static void setUp() { WebDriverManager.chromedriver(). setup();
     }
+
 
     @BeforeEach
     public void beforeEach() {
