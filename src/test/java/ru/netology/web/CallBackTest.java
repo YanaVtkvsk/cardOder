@@ -25,7 +25,6 @@ class CallBackTest {
 
     @BeforeEach
     public void beforeEach() {
-        driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -34,6 +33,7 @@ class CallBackTest {
         options.addArguments("disable-infobars");
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-gpu");
+        driver = new ChromeDriver(options);
         driver.get("http://localhost:9999");
     }
 
