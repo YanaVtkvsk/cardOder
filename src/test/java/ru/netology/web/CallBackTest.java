@@ -18,12 +18,14 @@ class CallBackTest {
     private WebDriver driver;
 
     @BeforeAll
-    public static void setUp() { WebDriverManager.chromedriver(). setup();
+    public static void setUp() {
+        WebDriverManager.chromedriver().setup();
     }
 
 
     @BeforeEach
     public void beforeEach() {
+        driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -37,6 +39,7 @@ class CallBackTest {
         driver.quit();
         driver = null;
     }
+
     @Test
     void shouldTest() {
         driver.get("http://localhost:9999");
