@@ -30,7 +30,10 @@ class CallBackTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        options.addArguments("start-maximized");
+        options.addArguments("disable-infobars");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-gpu");
         driver.get("http://localhost:9999");
     }
 
@@ -42,7 +45,6 @@ class CallBackTest {
 
     @Test
     void shouldTest() {
-        driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("span[data-test-id=name] input")).sendKeys("Василий");
         driver.findElement(By.cssSelector("span[data-test-id=phone] input")).sendKeys("+79270000000");
         driver.findElement(By.cssSelector("label[data-test-id=agreement]")).click();
